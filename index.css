@@ -1,5 +1,7 @@
 body, html {
     height: 100%;
+    background-color: #1a2737;
+    margin: 0;
 }
 
 /* Imagen Grande */
