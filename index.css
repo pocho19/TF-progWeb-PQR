@@ -42,7 +42,7 @@ body, html {
     color: white;
   }
 
-  /* Navbar */
+/* Navbar */
   .navbar {
     display: flex;
     background-color: #96182d;
@@ -50,4 +50,18 @@ body, html {
     top: 0;
     position: sticky;
     z-index: 1;
+  }
+
+/* TestContent */
+  .content2{
+    background-image: url("bh.jpg");
+    height: 50%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+  }
+  .content{
+    height: 300px;
   }
