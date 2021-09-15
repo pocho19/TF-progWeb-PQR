@@ -40,3 +40,13 @@ body, html {
     background-color: #555;
     color: white;
   }
+
+  /* Navbar */
+  .navbar {
+    display: flex;
+    background-color: #96182d;
+    height: 50px;
+    top: 0;
+    position: sticky;
+    z-index: 1;
+  }
