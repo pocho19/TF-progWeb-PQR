@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+    color: #dddddd;
+    font-family: Verdana;
+}
+
+body{
+    background-color: #1a2737;
+    margin: 0;
+}
+.container{
+    margin: 20px;
+    display: flex;
+}
+.column{
+    padding: 20px;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+}
+.name{
+    margin-bottom: 15px;
+    font-size: xx-large;
+    color: #dddddd;
+}
+.profilepic{
+    background-color: red;
+    height: 150px;
+    width: 150px;
+    margin: 20px;
+}
+.subtitle{
+    margin-bottom: 10px;
+}
+li{
+    margin-left: 10px;
+}
+
