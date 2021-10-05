@@ -12,9 +12,30 @@
         <title>GCR - Login</title>
     </head>
     <body>
-        <div class="login-screen">
-            <div class="login-welcome-text"><h1>INSERTE SUS CREDENCIALES</h1></div>
-            <div class="form-container"></div>
+        <div class="main">
+        <form action="action_page.php" method="post">
+            <div class="imgcontainer">
+              <img src="login.png" alt="Login" class="avatar">
+            </div>
+          
+            <div class="container">
+              <label for="uname"><b style="color: white;">Usuario</b></label>
+              <input type="text" placeholder="Ingrese Usuario" name="uname" required>
+          
+              <label for="psw"><b style="color: white;">Constraseña</b></label>
+              <input type="password" placeholder="Ingrese Contraseña" name="psw" required>
+          
+              <button type="submit">Login</button>
+              <label style="color: white;">
+                <input type="checkbox" checked="checked" name="remember"> Recordarme
+              </label>
+            </div>
+          
+            <div class="container" style="background-color:#6d7276">
+              <button type="button" class="cancelbtn">Cancelar</button>
+              <span class="psw"><a href="#">Recuperar contraseña</a></span>
+            </div>
+          </form> 
         </div>
     </body>
 </html>
