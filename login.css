@@ -46,12 +46,16 @@ body, html {
   
   /* Avatar image */
   img.avatar {
-    width: 40%;
+    min-width: 300px;
+    width: 20%;
     border-radius: 50%;
   }
   
   /* Add padding to containers */
   .container {
+    min-width: 300px;
+    margin-left: 34%;
+    margin-right: 34%;
     padding: 16px;
   }
   
