@@ -1,17 +1,7 @@
-*{
-    margin: 0;
-    padding: 0;
-    color: #dddddd;
-    font-family: Verdana;
-}
-
-body{
-    background-color: #1a2737;
-    margin: 0;
-}
 .container{
     margin: 20px;
     display: flex;
+    color: whitesmoke;
 }
 .column{
     padding: 20px;
@@ -22,7 +12,7 @@ body{
 .name{
     margin-bottom: 15px;
     font-size: xx-large;
-    color: #dddddd;
+    color: #FFDD00;
 }
 .profilepic{
     background-color: red;
@@ -36,4 +26,3 @@ body{
 li{
     margin-left: 10px;
 }
-
