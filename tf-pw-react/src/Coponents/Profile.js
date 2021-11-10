@@ -1,3 +1,4 @@
+import style from './Profile.css'
 
 const Profile = () => {
     return <div>
