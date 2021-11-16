@@ -1,4 +1,4 @@
-import SubjectCard from "./SubjectCard";
+import SubjectCard from "./Missions";
 import {useEffect, useState} from "react";
 import {httpGet, httpPost} from "../httpFuntions.js";
 
@@ -13,9 +13,9 @@ const Courses = () => {
 
 
     const subjects = [
-        { name: 'Matemática', approved: 12} ,
-        { name: 'Programación Web', approved: 12} ,
-        { name: 'Algoritmos', approved: 8}
+        { name: 'Jonh Wick', reward: 12000} ,
+        { name: 'Pocho', reward: 1500} ,
+        { name: 'Lobato ', reward: 2000}
     ]
 
     const clickFunction = () => {
@@ -48,35 +48,10 @@ const Courses = () => {
 
     useEffect(fetchCourses, [])
 
-    return (<div className='general'>
-        <div className="main-div">
-            <h1 className="custom-title">Todos los cursos</h1>
-        </div>
-        <div className="main-div">
-            <button className="btn btn-primary" onClick={clickFunction}>
-                {getName()}
-            </button>
-            <form onSubmit={createCourse}>
-                <fieldset>
-                    <legend>Disabled fieldset example</legend>
-                    <div className="mb-3">
-                        <label htmlFor="disabledTextInput" className="form-label">Name</label>
-                        <input type="text" id="disabledTextInput" className="form-control" value={name}
-                               onChange={(e) => setName(e.target.value) }/>
-                    </div>
-                    <div className="mb-3">
-                        <label htmlFor="disabledTextInput" className="form-label">Description</label>
-                        <input type="text" id="disabledTextInput" className="form-control" value={description}
-                               onChange={(e) => setDescription(e.target.value) }
-                        />
-                    </div>
-                    <button type="submit" className="btn btn-primary">CREAR CURSO</button>
-                </fieldset>
-            </form>
-        </div>
+    return <div className='general'>
         <div className="all-cards">
             {
-                finalSubjects
+                subjects
                     .map((mapSubject) => {
                         return (
                             <SubjectCard subject={mapSubject}/>
@@ -84,7 +59,7 @@ const Courses = () => {
                     })
             }
         </div>
-    </div>)
+    </div>
 }
 
 export default Courses

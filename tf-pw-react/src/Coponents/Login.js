@@ -9,7 +9,7 @@ const Login = () => {
 
                 <div className="container">
                     <label htmlFor="uname"><b style="color: white;">Usuario</b></label>
-                    <input type="text" placeholder="Ingrese Usuario" name="uname" required>
+                    <input type="text" placeholder="Ingrese Usuario" name="uname" required />
 
                         <label htmlFor="psw"><b style="color: white;">Constraseña</b></label>
                         <input type="password" placeholder="Ingrese Contraseña" name="psw" required />
@@ -27,6 +27,7 @@ const Login = () => {
             </form>
         </div>
     </div>
+
 }
 
 export default Login
