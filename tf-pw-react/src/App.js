@@ -8,9 +8,8 @@ import {
 import Navbar from "./Coponents/Navbar";
 import Home from "./Coponents/Home";
 import Profile from "./Coponents/Profile";
-import Missions from "./Coponents/Missions";
 import Login from "./Coponents/Login";
-import Courses from "./Coponents/Jobs";
+import Jobs from "./Coponents/Jobs";
 
 function App() {
 
@@ -27,7 +26,7 @@ function App() {
                             <Profile />
                         </Route>
                         <Route exact={true} path={`/main/jobs`}>
-                            <Courses />
+                            <Jobs />
                         </Route>
                         <Route exact={true} path={'/main/login'}>
                             <Login />
