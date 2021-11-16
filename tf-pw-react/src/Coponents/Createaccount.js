@@ -5,7 +5,7 @@ const Createaccount = () => {
         <div className="main">
             <form action="action_page.php" method="post">
                 <div className="imgcontainer">
-                    <img src="tf-pw-react/src/images/login.png" alt="Login" className="avatar" />
+                    <img src="tf-pw-react/src/images/login.png" alt="Crear Cuenta" className="avatar" />
                 </div>
 
                 <div className="containerAccount">
@@ -26,7 +26,7 @@ const Createaccount = () => {
                             <button type="submit">Crear Cuenta</button>
                         </div>
                     <div className="cancelar">
-                        <button type="button" className="cancelbtn">Cancelado</button>
+                        <button type="button" className="cancelbtn">Cancelar</button>
                     </div>
                     </div>
                 </div>

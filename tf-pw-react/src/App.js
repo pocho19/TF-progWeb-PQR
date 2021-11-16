@@ -30,11 +30,12 @@ function App() {
                             <Jobs />
                         </Route>
                         <Route exact={true} path={'/main/login'}>
-                            <Route exact={true} path={'/main/login/createaccount'}>
-                                <Createaccount />
-                            </Route>
                             <Login />
                         </Route>
+                    </Route>
+                    <Route exact={true} path={'/createaccount'}>
+                            <Navbar />
+                            <Createaccount />
                     </Route>
                     <Route path="*">
                         <div><h1>404</h1></div>
