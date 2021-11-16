@@ -1,5 +1,6 @@
 import Oper from './Operations.jpg.png';
 import Memo from './Memories.jpg.png';
+import {Link} from "react-router-dom";
 
 const Home = () => {
     return <div>
@@ -12,7 +13,7 @@ const Home = () => {
         <div className="contentsmain">
 
             <div className="contents">
-                <h2 className="header-box">Operations</h2>
+            <Link to={'/main/jobs'}><h2 className="header-box">Operations</h2></Link>
                 <div className="operation-contents">
                     <img src={Oper} className="picture" />
                         <p className="descriptive-text">
