@@ -10,8 +10,6 @@ import Home from "./Coponents/Home";
 import Profile from "./Coponents/Profile";
 import Missions from "./Coponents/Missions";
 import Login from "./Coponents/Login";
-import Courses from "./Coponents/Jobs";
-
 
 function App() {
 
@@ -28,12 +26,11 @@ function App() {
                             <Profile />
                         </Route>
                         <Route exact={true} path={`/main/jobs`}>
-                            <Courses />
+                            <Missions />
                         </Route>
-
-                    </Route>
-                    <Route exact={true} path={`/login`}>
-                        <Login />
+                        <Route exact={true} path={'/main/login'}>
+                            <Login />
+                        </Route>
                     </Route>
                     <Route path="*">
                         <div><h1>404</h1></div>

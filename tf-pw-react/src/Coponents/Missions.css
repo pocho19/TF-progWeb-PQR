@@ -8,13 +8,13 @@
     width: 30%;
 }
 
-.container {
+/*.container {
     display: flex;
     flex-direction: row;
     background-color: gray;
     justify-content: center;
     align-items: center;
-}
+}*/
 
 .description {
     font-weight: bold;
