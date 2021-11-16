@@ -1,0 +1,19 @@
+.custom-text{
+    color: white;
+}
+.custom-button{
+    color: white;
+}
+.containerAccount{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10%;
+    margin-left: 40%;
+    height: 400px;
+    width: 400px;
+    background-color: gray;
+}
+.cancelar{
+    margin-top: 90%;
+}

@@ -11,6 +11,7 @@ import Profile from "./Coponents/Profile";
 import Missions from "./Coponents/Missions";
 import Login from "./Coponents/Login";
 import Courses from "./Coponents/Jobs";
+import Createaccount from './Coponents/Createaccount';
 
 function App() {
 
@@ -30,6 +31,9 @@ function App() {
                             <Courses />
                         </Route>
                         <Route exact={true} path={'/main/login'}>
+                            <Route exact={true} path={'/main/login/createaccount'}>
+                                <Createaccount />
+                            </Route>
                             <Login />
                         </Route>
                     </Route>
