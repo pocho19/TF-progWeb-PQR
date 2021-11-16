@@ -8,7 +8,7 @@ const Login = () => {
                     <img src="tf-pw-react/src/images/login.png" alt="Login" className="avatar" />
                 </div>
 
-                <div className="container">
+                <div className="containerLogin">
                     <div>
                         <div>
                             <label htmlFor="uname"><b className="custom-text">Usuario </b></label>
@@ -25,7 +25,7 @@ const Login = () => {
                         </div>
                     <div className="cancelar">
                         <button type="button" className="cancelbtn">Cancelar</button>
-                        <span className="psw"><a href="#"> Recuperar contraseña</a></span>
+                        <span className="psw"><a href="#">Crear Usuario</a></span>
                     </div>
                     </div>
                 </div>
