@@ -9,6 +9,7 @@ import Navbar from "./Coponents/Navbar";
 import Home from "./Coponents/Home";
 import Profile from "./Coponents/Profile";
 import Missions from "./Coponents/Missions";
+import Login from "./Coponents/Login";
 
 function App() {
 
@@ -26,6 +27,9 @@ function App() {
                         </Route>
                         <Route exact={true} path={`/main/jobs`}>
                             <Missions />
+                        </Route>
+                        <Route exact={true} path={'/main/login'}>
+                            <Login />
                         </Route>
                     </Route>
                     <Route path="*">
