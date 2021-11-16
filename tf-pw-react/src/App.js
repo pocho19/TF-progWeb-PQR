@@ -1,3 +1,4 @@
+
 import './App.css';
 import {
     BrowserRouter as Router,
@@ -7,6 +8,7 @@ import {
 import Navbar from "./Coponents/Navbar";
 import Home from "./Coponents/Home";
 import Profile from "./Coponents/Profile";
+import Missions from "./Coponents/Missions";
 
 function App() {
 
@@ -21,6 +23,9 @@ function App() {
                         </Route>
                         <Route exact={true} path={`/main/profile`}>
                             <Profile />
+                        </Route>
+                        <Route exact={true} path={`/main/jobs`}>
+                            <Missions />
                         </Route>
                     </Route>
                     <Route path="*">
