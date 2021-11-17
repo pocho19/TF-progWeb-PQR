@@ -10,7 +10,7 @@ import Home from "./Coponents/Home";
 import Profile from "./Coponents/Profile";
 import Login from "./Coponents/Login";
 import Jobs from "./Coponents/Jobs";
-import Createaccount from "./Coponents/Createaccount";
+import Createaccount from './Coponents/Createaccount';
 
 function App() {
 
@@ -34,8 +34,8 @@ function App() {
                         </Route>
                     </Route>
                     <Route exact={true} path={'/createaccount'}>
-                        <Navbar />
-                        <Createaccount />
+                            <Navbar />
+                            <Createaccount />
                     </Route>
                     <Route path="*">
                         <div><h1>404</h1></div>
