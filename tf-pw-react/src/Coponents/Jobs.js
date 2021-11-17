@@ -2,6 +2,7 @@ import SubjectCard from "./Missions";
 import {useEffect, useState} from "react";
 import {httpGet, httpPost} from "../httpFuntions.js";
 import './Jobs.css'
+import {Link} from "react-router-dom";
 
 
 const Jobs = () => {
@@ -61,7 +62,7 @@ const Jobs = () => {
             }
         </div>
         <div>
-            <button className="createbutton">Create New Job</button>
+            <Link to={'/main/createjob'}><button className="createbutton">Create New Job</button></Link>
         </div>
     </div>
 }

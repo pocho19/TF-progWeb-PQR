@@ -11,6 +11,7 @@ import Profile from "./Coponents/Profile";
 import Login from "./Coponents/Login";
 import Jobs from "./Coponents/Jobs";
 import Createaccount from './Coponents/Createaccount';
+import CreateJob from "./Coponents/CreateJob";
 
 function App() {
 
@@ -28,6 +29,9 @@ function App() {
                         </Route>
                         <Route exact={true} path={`/main/jobs`}>
                             <Jobs />
+                        </Route>
+                        <Route exact={true} path={`/main/createjob`}>
+                            <CreateJob />
                         </Route>
                         <Route exact={true} path={'/main/login'}>
                             <Login />
