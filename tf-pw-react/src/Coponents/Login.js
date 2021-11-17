@@ -26,7 +26,7 @@ const Login = () => {
                         </div>
                     <div className="cancelar">
                         <button type="button" className="cancelbtn">Cancelar</button>
-                        <Link to={'/main/login/createaccount'}><span className="psw"><a href="#">Crear Usuario</a></span></Link>
+                        <Link to={'/createaccount'}><span className="psw"><a href="#">Crear Usuario</a></span></Link>
                     </div>
                     </div>
                 </div>

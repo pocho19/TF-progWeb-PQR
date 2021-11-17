@@ -1,6 +1,7 @@
 import SubjectCard from "./Missions";
 import {useEffect, useState} from "react";
 import {httpGet, httpPost} from "../httpFuntions.js";
+import './Jobs.css'
 
 
 const Jobs = () => {
@@ -13,9 +14,9 @@ const Jobs = () => {
 
 
     const subjects = [
-        { name: 'Jonh Wick', reward: 12000} ,
-        { name: 'Pocho', reward: 1500} ,
-        { name: 'Lobato ', reward: 2000}
+        { name: 'Jonh Wick', description: 'reward: 12000'} ,
+        { name: 'Pocho', description: 'reward: 500'} ,
+        { name: 'Lobato ', description: 'reward: 5000'}
     ]
 
     const clickFunction = () => {
@@ -58,6 +59,9 @@ const Jobs = () => {
                         )
                     })
             }
+        </div>
+        <div>
+            <button className="createbutton">Create New Job</button>
         </div>
     </div>
 }
