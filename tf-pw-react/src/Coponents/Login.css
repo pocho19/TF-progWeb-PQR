@@ -11,7 +11,7 @@
 .form-container {
     display: flex;
     flex-direction: column;
-    background-color: white;
+    background-color: darkgray;
     padding: 20px;
     width: 400px;
     height: 250px;
