@@ -17,7 +17,7 @@ class JobViewSet(viewsets.ModelViewSet):
 
 class JobFinishedViewSet(viewsets.ModelViewSet):
     serializer_class = JobSerializer
-    queryset = Jobs.objects.filer(finished=True)
+    queryset = Jobs.objects.filter(finished=True)
 
 
 class RegisterView(generics.CreateAPIView):
