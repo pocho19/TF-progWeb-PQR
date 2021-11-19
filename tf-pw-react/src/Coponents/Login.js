@@ -2,6 +2,7 @@ import './Login.css';
 import {useState} from "react";
 import {httpPost} from "../httpFuntions";
 import {useHistory} from 'react-router-dom'
+import log from "./login.png";
 
 const Login = () => {
 
@@ -20,7 +21,7 @@ const Login = () => {
 
     return (
         <div className='login-screen'>
-            <div className='welcome-text-container'><h1>Accseso de Usuario</h1></div>
+            <img src={log} className="picture" />
             <form className='form-container' onSubmit={login}>
                 <div className="mb-3">
                     <label htmlFor="exampleFormControlInput1" className="form-label">Correo Electronico </label>
