@@ -1,38 +1,53 @@
 import './Login.css';
-import {Link} from "react-router-dom";
+import {useState} from "react";
+import {httpPost} from "../httpFuntions";
+import {useHistory} from 'react-router-dom'
 
 const Login = () => {
-    return <div>
-        <div className="main">
-            <form action="action_page.php" method="post">
-                <div className="imgcontainer">
-                    <img src="tf-pw-react/src/images/login.png" alt="Login" className="avatar" />
-                </div>
 
-                <div className="containerLogin">
-                    <div>
-                        <div>
-                            <label htmlFor="uname"><b className="custom-text">Usuario </b></label>
-                            <input type="text" placeholder="Ingrese Usuario" name="uname" required />
-                        </div>
-                        <div>
-                            <label htmlFor="psw"><b className="custom-text">Constraseña </b></label>
-                            <input type="password" placeholder="Ingrese Contraseña" name="psw" required />
-                        </div>
-                        <div>
-                            <button type="submit">Login</button>
-                            <label className="custom-button"> Recordarme</label>
-                            <input type="checkbox" checked={true} name="remember"></input>
-                        </div>
-                    <div className="cancelar">
-                        <button type="button" className="cancelbtn">Cancelar</button>
-                        <Link to={'/createaccount'}><span className="psw"><a href="#">Crear Usuario</a></span></Link>
-                    </div>
-                    </div>
+    const [username, setUsername] = useState()
+    const [password, setPassword] = useState()
+
+    const history = useHistory();
+
+    const login = (e) => {
+        e.preventDefault()
+        httpPost('api/login/', {username: username, password: password}).then((res) => {
+            localStorage.setItem('token', res.data.access)
+            history.push('/main')
+        })
+    }
+
+    return (
+        <div className='login-screen'>
+            <div className='welcome-text-container'><h1>Accseso de Usuario</h1></div>
+            <form className='form-container' onSubmit={login}>
+                <div className="mb-3">
+                    <label htmlFor="exampleFormControlInput1" className="form-label">Correo Electronico </label>
+                    <input
+                        className="form-control"
+                        id="exampleFormControlInput1"
+                        placeholder="mi@correo.com.ar"
+                        value={username}
+                        onChange={(e) => setUsername(e.target.value)}
+                    />
+                </div>
+                <div className="mb-3">
+                    <label htmlFor="exampleFormControlTextarea1" className="form-label">Contraseña </label>
+                    <input
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        type="password"
+                        className="form-control"
+                        id="exampleFormControlInput1"
+                        placeholder="Contraseña" />
+                </div>
+                <div className={'button-container'}>
+                    <button type="submit" className="btn btn-primary">Conectarse</button>
                 </div>
             </form>
         </div>
-    </div>
+)
 }
 
 export default Login

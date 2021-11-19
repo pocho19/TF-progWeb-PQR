@@ -1,19 +1,27 @@
-.custom-text{
-    color: white;
-}
-.custom-button{
-    color: white;
-}
-.containerLogin{
+.login-screen {
     display: flex;
     align-items: center;
-    justify-content: center;
-    margin-top: 10%;
-    margin-left: 40%;
-    height: 400px;
-    width: 400px;
-    background-color: gray;
+    padding: 40px 80px 40px 40px ;
+    background-color: #262626;
+    height: 500px;
+    justify-content: space-between;
+    flex-direction: column;
 }
-.cancelar{
-    margin-top: 90%;
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: 20px;
+    width: 400px;
+    height: 250px;
+}
+
+.button-container {
+    align-self: flex-end;
+}
+
+.welcome-text-container {
+    background-color: darkgrey;
+    padding: 10px;
 }
