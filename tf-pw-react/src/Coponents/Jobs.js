@@ -8,17 +8,10 @@ import {Link} from "react-router-dom";
 const Jobs = () => {
 
     const [filtered, setFiltered] = useState(false)
-    const [courses, setCourses] = useState([])
+    const [jobs, setJobs] = useState([])
 
     const [name, setName] = useState([])
-    const [description, setDescription] = useState([])
-
-
-    const subjects = [
-        { name: 'Jonh Wick', description: 'reward: 12000'} ,
-        { name: 'Pocho', description: 'reward: 500'} ,
-        { name: 'Lobato ', description: 'reward: 5000'}
-    ]
+    const [reward, setReward] = useState([])
 
     const clickFunction = () => {
         setFiltered(!filtered)
@@ -31,29 +24,48 @@ const Jobs = () => {
     let finalSubjects;
 
     if (filtered) {
-        finalSubjects = courses.filter((subject) => {
+        finalSubjects = jobs.filter((subject) => {
             return subject.approved > 10
         })
     } else {
-        finalSubjects = courses
+        finalSubjects = jobs
     }
 
-    const fetchCourses = () => {
-        httpGet('api/courses/')
-            .then((res) => setCourses(res.data))
+    const fetchJobs = () => {
+        httpGet('api/jobs/')
+            .then((res) => setJobs(res.data))
     }
 
-    const createCourse = () => {
-        httpPost('api/courses/', { name: name, description: description})
-            .then(fetchCourses)
+    const createJob = () => {
+        httpPost('api/jobs/', { name: name, reward: reward})
+            .then(fetchJobs)
     }
 
-    useEffect(fetchCourses, [])
+    useEffect(fetchJobs, [])
 
     return <div className='general'>
+        <div className="main-div">
+            <form onSubmit={createJob}>
+                <fieldset>
+                    <legend>New Bounty</legend>
+                    <div className="mb-3">
+                        <label htmlFor="disabledTextInput" className="form-label">Name</label>
+                        <input type="text" id="disabledTextInput" className="form-control" value={name}
+                               onChange={(e) => setName(e.target.value) }/>
+                    </div>
+                    <div className="mb-3">
+                        <label htmlFor="disabledTextInput" className="form-label">Reward</label>
+                        <input type="text" id="disabledTextInput" className="form-control" value={reward}
+                               onChange={(e) => setReward(e.target.value) }
+                        />
+                    </div>
+                    <button type="submit" className="btn btn-primary">CREATE JOB</button>
+                </fieldset>
+            </form>
+        </div>
         <div className="all-cards">
             {
-                subjects
+                finalSubjects
                     .map((mapSubject) => {
                         return (
                             <SubjectCard subject={mapSubject}/>

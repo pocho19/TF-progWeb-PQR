@@ -1,57 +1,50 @@
 import {useEffect, useState} from "react";
 import {httpGet, httpPost} from "../httpFuntions";
 
-const CreateJob = () =>{
+const CreateJob = () => {
 
-        const [filtered, setFiltered] = useState(false)
-        const [courses, setCourses] = useState([])
+    const [filtered, setFiltered] = useState(false)
+    const [jobs, setJobs] = useState([])
 
-        const [name, setName] = useState([])
-        const [description, setDescription] = useState([])
+    const [name, setName] = useState([])
+    const [reward, setReward] = useState([])
 
+    const clickFunction = () => {
+        setFiltered(!filtered)
+    }
 
-        const subjects = [
-            { name: 'Matemática', approved: 12} ,
-            { name: 'Programación Web', approved: 12} ,
-            { name: 'Algoritmos', approved: 8}
-        ]
+    const getName = () => {
+        return filtered ? "Dejar de filtrar" : "Filtrar"
+    }
 
-        const clickFunction = () => {
-            setFiltered(!filtered)
-        }
+    let finalSubjects;
 
-        const getName = () => {
-            return filtered ? "Dejar de filtrar" : "Filtrar"
-        }
+    if (filtered) {
+        finalSubjects = jobs.filter((subject) => {
+            return subject.approved > 10
+        })
+    } else {
+        finalSubjects = jobs
+    }
 
-        let finalSubjects;
+    const fetchJobs = () => {
+        httpGet('api/jobs/')
+            .then((res) => setJobs(res.data))
+    }
 
-        if (filtered) {
-            finalSubjects = courses.filter((subject) => {
-                return subject.approved > 10
-            })
-        } else {
-            finalSubjects = courses
-        }
+    const createJob = () => {
+        httpPost('api/jobs/', { name: name, reward: reward})
+            .then(fetchJobs)
+    }
 
-        const fetchCourses = () => {
-            httpGet('api/courses/')
-                .then((res) => setCourses(res.data))
-        }
-
-        const createCourse = () => {
-            httpPost('api/courses/', { name: name, description: description})
-                .then(fetchCourses)
-        }
-
-        useEffect(fetchCourses, [])
+        useEffect(fetchJobs, [])
 
 
     return <div>
         <div className="main-div">
-            <form onSubmit={createCourse}>
+            <form onSubmit={createJob}>
                 <fieldset>
-                    <legend>Disabled fieldset example</legend>
+                    <legend>New Bounty</legend>
                     <div className="mb-3">
                         <label htmlFor="disabledTextInput" className="form-label">Name</label>
                         <input type="text" id="disabledTextInput" className="form-control" value={name}
@@ -59,8 +52,8 @@ const CreateJob = () =>{
                     </div>
                     <div className="mb-3">
                         <label htmlFor="disabledTextInput" className="form-label">Reward</label>
-                        <input type="text" id="disabledTextInput" className="form-control" value={description}
-                               onChange={(e) => setDescription(e.target.value) }
+                        <input type="text" id="disabledTextInput" className="form-control" value={reward}
+                               onChange={(e) => setReward(e.target.value) }
                         />
                     </div>
                     <button type="submit" className="btn btn-primary">CREATE JOB</button>
