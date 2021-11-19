@@ -1,12 +1,18 @@
 import './Profile.css';
 
 const Profile = () => {
+    const [userData, setUserData] = useState({})
+
+    useEffect(() => {
+        httpGet('api/me/ajsndkasd').then((res) => setUserData(res.data))
+    }, [])
+
     return <div>
         <div className="container">
             <div className="profilepic">PIC</div>
 
             <div className="column">
-                <p className="name">UMP45</p>
+                <p className="name">{userData.username}</p>
                 <p className="about">Electronic warfare specialist</p>
             </div>
         </div>

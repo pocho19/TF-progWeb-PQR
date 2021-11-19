@@ -12,6 +12,7 @@ import Login from "./Coponents/Login";
 import Jobs from "./Coponents/Jobs";
 import Createaccount from './Coponents/Createaccount';
 import CreateJob from "./Coponents/CreateJob";
+import AuthRoute from "./Coponents/AuthRoute";
 
 function App() {
 
@@ -24,9 +25,9 @@ function App() {
                         <Route exact={true} path={`/main/home`}>
                             <Home />
                         </Route>
-                        <Route exact={true} path={`/main/profile`}>
+                        <AuthRoute exact={true} path={`/main/profile`}>
                             <Profile />
-                        </Route>
+                        </AuthRoute>
                         <Route exact={true} path={`/main/jobs`}>
                             <Jobs />
                         </Route>
