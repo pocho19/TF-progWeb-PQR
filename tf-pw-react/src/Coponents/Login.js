@@ -20,30 +20,30 @@ const Login = () => {
 
     return (
         <div className='login-screen'>
-            <div className='welcome-text-container'><h1>Accseso de Usuario</h1></div>
+            <div className='welcome-text-container'><h1>User Access</h1></div>
             <form className='form-container' onSubmit={login}>
                 <div className="mb-3">
-                    <label htmlFor="exampleFormControlInput1" className="form-label">Correo Electronico </label>
+                    <label htmlFor="exampleFormControlInput1" className="form-label">User Login </label>
                     <input
                         className="form-control"
                         id="exampleFormControlInput1"
-                        placeholder="mi@correo.com.ar"
+                        placeholder="user@mail.com"
                         value={username}
                         onChange={(e) => setUsername(e.target.value)}
                     />
                 </div>
                 <div className="mb-3">
-                    <label htmlFor="exampleFormControlTextarea1" className="form-label">Contraseña </label>
+                    <label htmlFor="exampleFormControlTextarea1" className="form-label">Password </label>
                     <input
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                         type="password"
                         className="form-control"
                         id="exampleFormControlInput1"
-                        placeholder="Contraseña" />
+                        placeholder="Password" />
                 </div>
                 <div className={'button-container'}>
-                    <button type="submit" className="btn btn-primary">Conectarse</button>
+                    <button type="submit" className="btn btn-primary">AUTHENTICATE</button>
                 </div>
             </form>
         </div>
