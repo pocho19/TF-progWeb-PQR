@@ -4,6 +4,7 @@ import {httpGet, httpPost} from "../httpFuntions.js";
 import './Jobs.css'
 import {Link} from "react-router-dom";
 
+const axios = require('axios');
 
 const Jobs = () => {
 
@@ -12,6 +13,7 @@ const Jobs = () => {
 
     const [name, setName] = useState([])
     const [reward, setReward] = useState([])
+    const [desc, setDesc] = useState([])
 
     const clickFunction = () => {
         setFiltered(!filtered)
@@ -33,11 +35,11 @@ const Jobs = () => {
 
     const fetchJobs = () => {
         httpGet('api/jobs/')
-            .then((res) => setJobs(res.data))
+        .then((res) => setJobs(res.data))
     }
 
     const createJob = () => {
-        httpPost('api/jobs/', { name: name, reward: reward})
+        httpPost('api/jobs/', { name: name, reward: reward, desc: desc})
             .then(fetchJobs)
     }
 
@@ -49,17 +51,23 @@ const Jobs = () => {
                 <fieldset>
                     <legend>New Bounty</legend>
                     <div className="mb-3">
-                        <label htmlFor="disabledTextInput" className="form-label">Name</label>
+                        <label htmlFor="disabledTextInput" className="form-label">Name </label>
                         <input type="text" id="disabledTextInput" className="form-control" value={name}
                                onChange={(e) => setName(e.target.value) }/>
                     </div>
                     <div className="mb-3">
-                        <label htmlFor="disabledTextInput" className="form-label">Reward</label>
+                        <label htmlFor="disabledTextInput" className="form-label">Description </label>
+                        <input type="text" id="disabledTextInput" className="form-control" value={desc}
+                               onChange={(e) => setDesc(e.target.value) }
+                        />
+                    </div>
+                    <div className="mb-3">
+                        <label htmlFor="disabledTextInput" className="form-label">Reward </label>
                         <input type="text" id="disabledTextInput" className="form-control" value={reward}
                                onChange={(e) => setReward(e.target.value) }
                         />
                     </div>
-                    <button type="submit" className="btn btn-primary">CREATE JOB</button>
+                    <button type="submit" className="btn btn-primary">SET BOUNTY</button>
                 </fieldset>
             </form>
         </div>
