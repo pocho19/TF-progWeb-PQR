@@ -1,10 +1,12 @@
 import './Profile.css';
+import {useEffect, useState} from "react";
+import {httpGet} from "../httpFuntions";
 
 const Profile = () => {
     const [userData, setUserData] = useState({})
 
     useEffect(() => {
-        httpGet('api/me/ajsndkasd').then((res) => setUserData(res.data))
+        httpGet('api/me').then((res) => setUserData(res.data))
     }, [])
 
     return <div>
