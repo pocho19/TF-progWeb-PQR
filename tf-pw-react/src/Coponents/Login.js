@@ -3,6 +3,7 @@ import {useState} from "react";
 import {httpPost} from "../httpFuntions";
 import {useHistory} from 'react-router-dom'
 import log from "./login.png";
+import {Link} from "react-router-dom";
 
 const Login = () => {
 
@@ -45,6 +46,7 @@ const Login = () => {
                 </div>
                 <div className={'button-container'}>
                     <button type="submit" className="btn btn-primary">Conectarse</button>
+                    <Link to ={"/createaccount"}><button type="submit" className="btn btn-primary">Crear Cuenta</button></Link>
                 </div>
             </form>
         </div>
