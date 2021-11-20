@@ -2,6 +2,7 @@ import './Createaccount.css';
 import {useState} from "react";
 import {httpCreateAccount} from "../httpFuntions";
 import {Link, useHistory} from "react-router-dom";
+import log from "./login.png";
 
 const Createaccount = () => {
     const [username, setUsername] = useState()
@@ -18,7 +19,8 @@ const Createaccount = () => {
     const history = useHistory();
 
     return <div>
-        <div className="main">
+        <div className="create-account">
+        <img src={log} className="picture" />
             <form action="action_page.php" method="post" onSubmit={Create}>
                 <div className="containerAccount">
                     <div>

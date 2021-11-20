@@ -1,3 +1,13 @@
+.create-account {
+    display: flex;
+    align-items: center;
+    padding: 40px 80px 40px 40px ;
+    background-color: #262626;
+    height: 500px;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
 .custom-text{
     color: white;
 }
@@ -6,14 +16,12 @@
 }
 .containerAccount{
     display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 10%;
-    margin-left: 40%;
-    height: 400px;
+    flex-direction: column;
+    background-color: darkgray;
+    padding: 20px;
     width: 400px;
-    background-color: gray;
+    height: 250px;
 }
 .cancelar{
-    margin-top: 50%;
+    margin-top: 35%;
 }
