@@ -1,10 +1,8 @@
 import './Missions.css';
 import pgimg from "./mission.png";
-import {Link} from "react-router-dom";
 import "./Jobs";
 import { httpPatch } from '../httpFuntions';
 import { httpDelete} from '../httpFuntions';
-import fetchJobs from './Jobs.js';
 
 
 function SubjectCard ({subject}) {
@@ -22,6 +20,11 @@ function SubjectCard ({subject}) {
         window.location.reload();
     }
 
+    const finished = () => {
+        if (subject.finished)
+        return "Yes"
+        else return "No"
+    }
     return (
         <div className="card-container-custom">
             <div className="card">
@@ -30,7 +33,7 @@ function SubjectCard ({subject}) {
                     <h5 className="card-title">Target: {subject.name}</h5>
                     <p className="card-text">Conditions: {subject.desc}</p>
                     <p className="card-text">Reward: {subject.reward}</p>
-                    <p className="card-text">Bounty Claimed: {subject.finished}</p>
+                    <p className="card-text">Bounty Claimed: {finished(subject)}</p>
                     <button type="submit" className="btn btn-primary" onClick={claimBounty}>CLAIM BOUNTY</button>
                     <button type="submit" className="btn btn-primary" onClick={noBounty}>DELETE BOUNTY</button>
                 </div>
