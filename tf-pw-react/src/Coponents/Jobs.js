@@ -82,9 +82,6 @@ const Jobs = () => {
                     })
             }
         </div>
-        <div>
-            <Link to={'/main/createjob'}><button className="createbutton">Create New Job</button></Link>
-        </div>
     </div>
 }
 

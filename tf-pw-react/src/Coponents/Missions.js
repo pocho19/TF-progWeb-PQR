@@ -11,7 +11,7 @@ function SubjectCard ({subject}) {
 
     const claimBounty = () => {
         httpPatch('api/jobs/' + subject.id + "/", {name: subject.name, reward: subject.reward, desc: subject.desc, finished: true})
-        .then(fetchJobs())
+        .then(refreshPage)
     }
     const noBounty = () => {
         httpDelete('api/jobs/' + subject.id + "/")
@@ -28,12 +28,9 @@ function SubjectCard ({subject}) {
                 <img src={pgimg} className="picture" alt="..."/>
                 <div className="card-body">
                     <h5 className="card-title">Target: {subject.name}</h5>
-                    <p className="card-text">Conditions: 
-                        {subject.desc}
-                    </p>
-                    <p className="chard-text">Reward: 
-                        {subject.reward}
-                    </p>
+                    <p className="card-text">Conditions: {subject.desc}</p>
+                    <p className="card-text">Reward: {subject.reward}</p>
+                    <p className="card-text">Bounty Claimed: {subject.finished}</p>
                     <button type="submit" className="btn btn-primary" onClick={claimBounty}>CLAIM BOUNTY</button>
                     <button type="submit" className="btn btn-primary" onClick={noBounty}>DELETE BOUNTY</button>
                 </div>
