@@ -35,3 +35,7 @@ export const httpDelete = async (endpoint) => {
         }
     })
 }
+
+export const httpCreateAccount = async (endpoint, data) => {
+    return axios.post(baseUrl + endpoint, data)
+}

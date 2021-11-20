@@ -1,6 +1,6 @@
 import './Createaccount.css';
 import {useState} from "react";
-import {httpPost} from "../httpFuntions";
+import {httpCreateAccount} from "../httpFuntions";
 import {Link, useHistory} from "react-router-dom";
 
 const Createaccount = () => {
@@ -9,7 +9,7 @@ const Createaccount = () => {
 
     const Create = (e) => {
         e.preventDefault()
-        httpPost('api/register/', {username: username, password: password}).then((res) => {
+        httpCreateAccount('api/register/', {username: username, password: password}).then((res) => {
             localStorage.setItem('token', res.data.access)
             history.push('/main/login')
         })
