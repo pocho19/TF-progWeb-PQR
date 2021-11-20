@@ -31,7 +31,7 @@ const Createaccount = () => {
                     </div>
                 </div>
             </form>
-        </div>>
+        </div>
     </div>
 }
 
