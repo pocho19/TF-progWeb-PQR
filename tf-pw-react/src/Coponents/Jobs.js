@@ -50,20 +50,20 @@ const Jobs = () => {
         <div className="main-div">
             <form onSubmit={createJob}>
                 <fieldset>
-                    <legend>New Bounty</legend>
+                    <legend className="text">New Bounty</legend>
                     <div className="mb-3">
-                        <label htmlFor="disabledTextInput" className="form-label">Name </label>
+                        <label htmlFor="disabledTextInput" className="form-label text">Name </label>
                         <input type="text" id="disabledTextInput" className="form-control" value={name}
                                onChange={(e) => setName(e.target.value) }/>
                     </div>
                     <div className="mb-3">
-                        <label htmlFor="disabledTextInput" className="form-label">Description </label>
+                        <label htmlFor="disabledTextInput" className="form-label text">Description </label>
                         <input type="text" id="disabledTextInput" className="form-control" value={desc}
                                onChange={(e) => setDesc(e.target.value) }
                         />
                     </div>
                     <div className="mb-3">
-                        <label htmlFor="disabledTextInput" className="form-label">Reward </label>
+                        <label htmlFor="disabledTextInput" className="form-label text">Reward </label>
                         <input type="text" id="disabledTextInput" className="form-control" value={reward}
                                onChange={(e) => setReward(e.target.value) }
                         />
