@@ -38,9 +38,10 @@ const Jobs = () => {
         .then((res) => setJobs(res.data))
     }
 
-    const createJob = () => {
-        httpPost('api/jobs/', { name: name, reward: reward, desc: desc})
-            .then(fetchJobs)
+    const createJob = (e) => {
+        e.preventDefault()
+        httpPost('api/jobs/', {name: name, reward: reward, desc: desc})
+            .then(fetchJobs())
     }
 
     useEffect(fetchJobs, [])
