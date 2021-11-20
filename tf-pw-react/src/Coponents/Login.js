@@ -25,28 +25,28 @@ const Login = () => {
             <img src={log} className="picture" />
             <form className='form-container' onSubmit={login}>
                 <div className="mb-3">
-                    <label htmlFor="exampleFormControlInput1" className="form-label">Correo Electronico </label>
+                    <label htmlFor="exampleFormControlInput1" className="form-label">Username </label>
                     <input
                         className="form-control"
                         id="exampleFormControlInput1"
-                        placeholder="mi@correo.com.ar"
+                        placeholder="username"
                         value={username}
                         onChange={(e) => setUsername(e.target.value)}
                     />
                 </div>
                 <div className="mb-3">
-                    <label htmlFor="exampleFormControlTextarea1" className="form-label">Contraseña </label>
+                    <label htmlFor="exampleFormControlTextarea1" className="form-label">Password </label>
                     <input
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                         type="password"
                         className="form-control"
                         id="exampleFormControlInput1"
-                        placeholder="Contraseña" />
+                        placeholder="password" />
                 </div>
                 <div className={'button-container'}>
-                    <button type="submit" className="btn btn-primary">Conectarse</button>
-                    <Link to ={"/createaccount"}><button type="submit" className="btn btn-primary">Crear Cuenta</button></Link>
+                    <button type="submit" className="btn btn-primary">Authenticate</button>
+                    <Link to ={"/createaccount"}><button type="submit" className="btn btn-primary">Request Access</button></Link>
                 </div>
             </form>
         </div>

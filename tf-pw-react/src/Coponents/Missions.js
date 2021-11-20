@@ -15,7 +15,11 @@ function SubjectCard ({subject}) {
     }
     const noBounty = () => {
         httpDelete('api/jobs/' + subject.id + "/")
-        .then(fetchJobs())
+        .then(refreshPage)
+    }
+
+    const refreshPage = () => {
+        window.location.reload();
     }
 
     return (
