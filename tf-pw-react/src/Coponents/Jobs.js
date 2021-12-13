@@ -14,6 +14,8 @@ const Jobs = () => {
     const [name, setName] = useState([])
     const [reward, setReward] = useState([])
     const [desc, setDesc] = useState([])
+    const [name2, setName2] = useState([])
+    const [reward2, setReward2] = useState([])
 
     const clickFunction = () => {
         setFiltered(!filtered)
@@ -39,7 +41,7 @@ const Jobs = () => {
     }
 
     const searchJobs = () => {
-        httpGet('api/jobs/?name='+{name}+"&reward=" + {reward} + "/")
+        httpGet('api/jobs/?name='+{name2}+"&reward=" + {reward2} + "/")
             .then((res) => setJobs(res.data))
     }
 
@@ -81,13 +83,13 @@ const Jobs = () => {
                     <legend className="text">Search Bounty</legend>
                     <div className="mb-3">
                         <label htmlFor="disabledTextInput" className="form-label text">Name </label>
-                        <input type="text" id="disabledTextInput" className="form-control" value={name}
-                               onChange={(e) => setName(e.target.value) }/>
+                        <input type="text" id="disabledTextInput" className="form-control" value={name2}
+                               onChange={(e) => setName2(e.target.value) }/>
                     </div>
                     <div className="mb-3">
                         <label htmlFor="disabledTextInput" className="form-label text">Reward </label>
-                        <input type="text" id="disabledTextInput" className="form-control" value={reward}
-                               onChange={(e) => setReward(e.target.value) }
+                        <input type="text" id="disabledTextInput" className="form-control" value={reward2}
+                               onChange={(e) => setReward2(e.target.value) }
                         />
                     </div>
                     <button type="submit" className="btn btn-primary">SEARCH</button>
