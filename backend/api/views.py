@@ -14,6 +14,21 @@ class JobViewSet(viewsets.ModelViewSet):
     serializer_class = JobSerializer
     queryset = Jobs.objects.all()
 
+    def get_queryset(self):
+        queryset = self.queryset
+        name = self.request.query_params.get('name')
+        reward = self.request.query_params.get('reward')
+        if name is not None:
+            queryset = queryset.filter(name=name)
+        if reward is not None:
+            if reward == "alto":
+                queryset = queryset.filter(reward__gt=1000)
+            elif reward == "medio":
+                queryset = queryset.filter(reward__lte=1000).filter(reward__gt=100)
+            elif reward == "bajo":
+                queryset = queryset.filter(reward__lte=100)
+        return queryset
+
 
 class JobFinishedViewSet(viewsets.ModelViewSet):
     serializer_class = JobSerializer

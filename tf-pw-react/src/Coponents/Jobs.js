@@ -71,6 +71,23 @@ const Jobs = () => {
                     <button type="submit" className="btn btn-primary">SET BOUNTY</button>
                 </fieldset>
             </form>
+            <form onSubmit={createJob}>
+                <fieldset>
+                    <legend className="text">Search Bounty</legend>
+                    <div className="mb-3">
+                        <label htmlFor="disabledTextInput" className="form-label text">Name </label>
+                        <input type="text" id="disabledTextInput" className="form-control" value={name}
+                               onChange={(e) => setName(e.target.value) }/>
+                    </div>
+                    <div className="mb-3">
+                        <label htmlFor="disabledTextInput" className="form-label text">Reward </label>
+                        <input type="text" id="disabledTextInput" className="form-control" value={desc}
+                               onChange={(e) => setDesc(e.target.value) }
+                        />
+                    </div>
+                    <button type="submit" className="btn btn-primary">SEARCH</button>
+                </fieldset>
+            </form>
         </div>
         <div className="all-cards">
             {
