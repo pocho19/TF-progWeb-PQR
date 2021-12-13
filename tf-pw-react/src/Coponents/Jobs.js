@@ -96,9 +96,9 @@ const Jobs = () => {
                         <label htmlFor="disabledTextInput" className="form-label text">Reward </label>
                         <select type="text" id="disabledTextInput" className="form-control" value={reward2}
                                 onChange={(e) => setReward2(e.target.value) }>
-                            <option value="Alto">High</option>
-                            <option value="Medio">Medium</option>
-                            <option value="Bajo">Low</option>
+                            <option value="alto">High</option>
+                            <option value="medio">Medium</option>
+                            <option value="bajo">Low</option>
                         </select>
                     </div>
                     <button type="submit" className="btn btn-primary">SEARCH</button>
