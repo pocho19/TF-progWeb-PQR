@@ -42,8 +42,13 @@ const Jobs = () => {
 
     const searchJobs = (e) => {
         e.preventDefault()
+        if (name2){
         httpGet('api/jobs/?name='+name2)
-            .then((res) => setJobs(res.data))
+            .then((res) => setJobs(res.data))}
+        else{
+            httpGet('api/jobs/?reward='+reward2)
+                .then((res) => setJobs(res.data))
+        }
     }
 
     const createJob = (e) => {
