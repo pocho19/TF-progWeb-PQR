@@ -38,6 +38,11 @@ const Jobs = () => {
         .then((res) => setJobs(res.data))
     }
 
+    const searchJobs = () => {
+        httpGet('api/jobs/?name='+{name}+"&reward=" + {reward} + "/")
+            .then((res) => setJobs(res.data))
+    }
+
     const createJob = (e) => {
         e.preventDefault()
         httpPost('api/jobs/', {name: name, reward: reward, desc: desc})
@@ -71,7 +76,7 @@ const Jobs = () => {
                     <button type="submit" className="btn btn-primary">SET BOUNTY</button>
                 </fieldset>
             </form>
-            <form onSubmit={createJob}>
+            <form onSubmit={searchJobs}>
                 <fieldset>
                     <legend className="text">Search Bounty</legend>
                     <div className="mb-3">
@@ -81,8 +86,8 @@ const Jobs = () => {
                     </div>
                     <div className="mb-3">
                         <label htmlFor="disabledTextInput" className="form-label text">Reward </label>
-                        <input type="text" id="disabledTextInput" className="form-control" value={desc}
-                               onChange={(e) => setDesc(e.target.value) }
+                        <input type="text" id="disabledTextInput" className="form-control" value={reward}
+                               onChange={(e) => setReward(e.target.value) }
                         />
                     </div>
                     <button type="submit" className="btn btn-primary">SEARCH</button>
