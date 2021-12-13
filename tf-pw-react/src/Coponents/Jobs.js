@@ -42,7 +42,7 @@ const Jobs = () => {
 
     const searchJobs = (e) => {
         e.preventDefault()
-        httpGet('api/jobs/?name='+name2)
+        httpGet('api/jobs/?name='+ name2)
             .then((res) => setJobs(res.data))
     }
 
@@ -87,16 +87,12 @@ const Jobs = () => {
                         <input type="text" id="disabledTextInput" className="form-control" value={name2}
                                onChange={(e) => setName2(e.target.value) }/>
                     </div>
-                    <div className="mb-3">
+                    {/* <div className="mb-3">
                         <label htmlFor="disabledTextInput" className="form-label text">Reward </label>
-
-                        <select type="text" id="disabledTextInput" className="form-control" value={reward2}
-                                onChange={(e) => setReward2(e.target.value) }>
-                            <option value="volvo">High</option>
-                            <option value="saab">Medium</option>
-                            <option value="mercedes">Low</option>
-                        </select>
-                    </div>
+                        <input type="text" id="disabledTextInput" className="form-control" value={reward2}
+                               onChange={(e) => setReward2(e.target.value) }
+                        />
+                    </div> */}
                     <button type="submit" className="btn btn-primary">SEARCH</button>
                 </fieldset>
             </form>
