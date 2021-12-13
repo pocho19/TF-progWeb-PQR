@@ -42,7 +42,7 @@ const Jobs = () => {
 
     const searchJobs = (e) => {
         e.preventDefault()
-        httpGet('api/jobs/?name='+{name2}+"&reward=" + {reward2} + "/")
+        httpGet('api/jobs/?name='+{name2})
             .then((res) => setJobs(res.data))
     }
 
