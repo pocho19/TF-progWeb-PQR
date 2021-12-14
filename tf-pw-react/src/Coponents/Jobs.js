@@ -87,6 +87,7 @@ const Jobs = () => {
             <form onSubmit={searchJobs}>
                 <fieldset>
                     <legend className="text">Search Bounty</legend>
+                    <p className="text2">"You may search by Target Name or Reward Type (High: +1000, Medium: -1000 & +100, Low: - 100)".</p>
                     <div className="mb-3">
                         <label htmlFor="disabledTextInput" className="form-label text">Name </label>
                         <input type="text" id="disabledTextInput" className="form-control" value={name2}
@@ -96,9 +97,9 @@ const Jobs = () => {
                         <label htmlFor="disabledTextInput" className="form-label text">Reward </label>
                         <select type="text" id="disabledTextInput" className="form-control" value={reward2}
                                 onChange={(e) => setReward2(e.target.value) }>
-                            <option value="Alto">High</option>
-                            <option value="Medio">Medium</option>
-                            <option value="Bajo">Low</option>
+                            <option value="alto">High</option>
+                            <option value="medio">Medium</option>
+                            <option value="bajo">Low</option>
                         </select>
                     </div>
                     <button type="submit" className="btn btn-primary">SEARCH</button>

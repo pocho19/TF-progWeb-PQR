@@ -10,3 +10,8 @@
 .text{
     color: whitesmoke;
 }
+.text2{
+    color: whitesmoke;
+    font-size: 10px;
+    alignment: center;
+}
