@@ -57,6 +57,10 @@ const Jobs = () => {
             .then(fetchJobs())
     }
 
+    const refreshPage = () => {
+        window.location.reload();
+    }
+
     useEffect(fetchJobs, [])
 
     return <div className='general'>
@@ -102,6 +106,7 @@ const Jobs = () => {
                         </select>
                     </div>
                     <button type="submit" className="btn btn-primary">SEARCH</button>
+                    <button type="submit" className="btn btn-primary" onClick={refreshPage}>UNFILTER</button>
                 </fieldset>
             </form>
         </div>
