@@ -91,6 +91,7 @@ const Jobs = () => {
             <form onSubmit={searchJobs}>
                 <fieldset>
                     <legend className="text">Search Bounty</legend>
+                    <p className="text2">"You may search by Target Name or Reward Type (High: +1000, Medium: -1000 & +100, Low: - 100)".</p>
                     <div className="mb-3">
                         <label htmlFor="disabledTextInput" className="form-label text">Name </label>
                         <input type="text" id="disabledTextInput" className="form-control" value={name2}
